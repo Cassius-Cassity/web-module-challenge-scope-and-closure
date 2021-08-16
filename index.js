@@ -27,12 +27,15 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   Study the code for counter1 and counter2, then answer the questions below.
   
-  1. What is the difference between counter1 and counter2?
+  1. What is the difference between counter1 and counter2? counter one has a function nested inside another function  while counter 2
+  is a variable that is located outside a function. 
   
-  2. Which of the two uses a closure? How can you tell?
+  2. Which of the two uses a closure? How can you tell? the first counter would be considered a closure because it is nested and cannot
+  be accessed from outside the functions. 
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?  counter one would be more perferable in most situations and counter 2 would only be perferable if you wanted
+     the counter to reset every single time that it was run. 
 */
 
 // counter1 code
@@ -62,8 +65,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(randomNumber){
+    return randomNumber = Math.floor(Math.random() * 3)
 }
 
 
@@ -81,10 +84,14 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inningcb){
+  return {
+    Home: inningcb(),
+    Away: inningcb()
+}
 }
 
+console.log(finalScore(inning())
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
